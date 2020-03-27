@@ -59,7 +59,7 @@ public class AppTest
         rep3 = new TemaXMLRepository(temaValidator, "teme.xml");
         rep2 = new NotaXMLRepository(notaValidator, "note.xml");
         srv = new Service(rep1, rep3, rep2);
-        int result = srv.saveStudent("40", "asd", 936);
+        int result = srv.saveStudent("415", "asd", 936);
         assertEquals(1, result);}
 
 }
