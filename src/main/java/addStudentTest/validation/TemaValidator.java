@@ -1,10 +1,13 @@
 package addStudentTest.validation;
 import addStudentTest.domain.Tema;
 
+import java.sql.SQLOutput;
+
 public class TemaValidator implements Validator<Tema> {
     public void validate(Tema tema) throws ValidationException {
+        System.out.println(tema.getDeadline());
         if (tema.getID() == null || tema.getID().equals("")) {
-            throw new ValidationException("ID invalid! \n");
+                throw new ValidationException("ID invalid! \n");
         }
         if (tema.getDescriere() == null || tema.getDescriere().equals("")) {
             throw new ValidationException("Descriere invalida! \n");
