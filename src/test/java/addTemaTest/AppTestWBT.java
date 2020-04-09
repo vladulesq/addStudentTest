@@ -60,6 +60,80 @@ public class AppTestWBT
         rep2 = new NotaXMLRepository(notaValidator, "note.xml");
         srv = new Service(rep1, rep3, rep2);
         int result = srv.saveTema("123","asd",10, 7);
-        assertEquals(1, result);}
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void decision_1(){
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        rep1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        rep3 = new TemaXMLRepository(temaValidator, "teme.xml");
+        rep2 = new NotaXMLRepository(notaValidator, "note.xml");
+        srv = new Service(rep1, rep3, rep2);
+        int result = srv.saveTema("123","asd",4, 2);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void decision_2(){
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        rep1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        rep3 = new TemaXMLRepository(temaValidator, "teme.xml");
+        rep2 = new NotaXMLRepository(notaValidator, "note.xml");
+        srv = new Service(rep1, rep3, rep2);
+        int result = srv.saveTema("123","asd",15, 2);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void decision_3(){
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        rep1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        rep3 = new TemaXMLRepository(temaValidator, "teme.xml");
+        rep2 = new NotaXMLRepository(notaValidator, "note.xml");
+        srv = new Service(rep1, rep3, rep2);
+        int result = srv.saveTema("123","asd",2, 15);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void decision_4(){
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        rep1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        rep3 = new TemaXMLRepository(temaValidator, "teme.xml");
+        rep2 = new NotaXMLRepository(notaValidator, "note.xml");
+        srv = new Service(rep1, rep3, rep2);
+        int result = srv.saveTema("","asd",4, 2);
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void decision_5(){
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        rep1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        rep3 = new TemaXMLRepository(temaValidator, "teme.xml");
+        rep2 = new NotaXMLRepository(notaValidator, "note.xml");
+        srv = new Service(rep1, rep3, rep2);
+        int result = srv.saveTema("123","",4, 2);
+        assertEquals(0, result);
+    }
 
 }
+
+
+
